@@ -1,0 +1,20 @@
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <h1 id="heroTitle" data-js="reveal-lines" class="hero-title">a diary of <span class="hi">stray thoughts</span> &amp; crazy ideas</h1>
+      <p class="hero-sub">{{@site.description}}</p>
+      <form data-members-form="subscribe" class="subscribe">
+        <input data-members-email type="email" required placeholder="you@domain.com" class="nb-input" aria-label="Email address" />
+        <button type="submit" class="btn btn-primary btn-pill nb-shadow-inverse">subscribe</button>
+        <p class="note success-message">thanks. please check your inbox.</p>
+        <p class="note error-message">oops - that didn't work. try again or contact us.</p>
+      </form>
+    </div>
+    <div class="hero-right" aria-hidden="true">
+      <div class="lottie-frame nb-shadow-xl">
+        <div id="lottieMount" data-src="{{asset "lottie/bird.json"}}"></div>
+        <noscript class="lottie-fallback">enable JavaScript, you goof.</noscript>
+      </div>
+    </div>
+  </div>
+</section>

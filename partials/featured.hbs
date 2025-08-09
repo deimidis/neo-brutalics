@@ -1,0 +1,31 @@
+{{#get "posts" filter="featured:true+status:published" include="authors" limit="1"}}
+  {{#if posts}}
+  <section class="featured">
+    <div class="wrap">
+      <div class="section-head right"><h2 class="h2">featured</h2></div>
+      {{#foreach posts}}
+      <article class="featured-hero">
+        <div class="ph-left">
+          <h3 class="h1" style="margin-top:.2rem"><a href="{{url}}">{{title}}</a></h3>
+          {{#if custom_excerpt}}
+            <p class="ph-sub">{{custom_excerpt}}</p>
+          {{else}}
+            {{#if excerpt}}<p class="ph-sub">{{excerpt words="30"}}</p>{{/if}}
+          {{/if}}
+          <p class="ph-date">{{date}}</p>
+        </div>
+        <a class="ph-right" href="{{url}}">
+          <div class="post-media-frame nb-shadow-xl">
+            {{#if feature_image}}
+              <img class="post-media" src="{{img_url feature_image size="l"}}" alt="{{title}}"/>
+            {{else}}
+              <div style="aspect-ratio:16/10"></div>
+            {{/if}}
+          </div>
+        </a>
+      </article>
+      {{/foreach}}
+    </div>
+  </section>
+  {{/if}}
+{{/get}}

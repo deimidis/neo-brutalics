@@ -1,0 +1,45 @@
+
+<nav class="nav-bar">
+  <div class="wrap nav-row">
+    <a href="{{@site.url}}" class="brand pill nb-shadow"><span class="brand-text">{{@site.title}}</span></a>
+    <div class="nav-right">
+      {{#if @site.navigation}}
+        {{navigation}}
+      {{/if}}
+      <button id="navToggle" class="nav-toggle pill nb-shadow" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bars"><span></span><span></span><span></span></span></button>
+    </div>
+  </div>
+
+  <!-- Tags dropdown panel (opens when clicking a nav link to #tags) -->
+  <div id="tagsPanel" class="tags-panel" hidden>
+    <div class="wrap">
+      <div class="tags-panel-inner nb-shadow-xl">
+        <div class="tags-grid">
+  {{navigation type="secondary"}}
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu shows the same nav links -->
+  <div id="mobileMenu" class="mobile-menu">
+    {{#if @site.navigation}}{{navigation}}{{/if}}</div>
+</nav>
+
+<!-- Hidden signout trigger -->
+<a id="__signout" data-members-signout hidden></a>
+
+<!-- Auth modal (opens when clicking a nav link to #auth) -->
+<div id="authModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
+  <div class="modal-card nb-shadow-xl">
+    <div class="modal-head">
+      <h3 id="authTitle" class="h2">Join or sign in</h3>
+      <button class="modal-close pill nb-shadow" data-close="authModal" aria-label="Close">Close</button>
+    </div>
+    <p class="muted" style="margin:.25rem 0 1rem">the ghost portal will take over now.</p>
+    <div class="modal-actions">
+      <button class="btn btn-primary btn-pill nb-shadow" data-portal="signup">sign up</button>
+      <button class="btn btn-pill nb-shadow" data-portal="signin">sign in</button>
+    </div>
+  </div>
+</div>

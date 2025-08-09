@@ -1,0 +1,39 @@
+{{!< default}}
+<article class="wrap post">
+  {{#post}}
+    <header class="post-hero">
+      <div class="ph-left">
+        {{#if tags}}
+        <div class="ph-tags">
+          {{#foreach tags}}
+            <a href="{{url}}">#{{name}}</a>{{#unless @last}}<span>•</span>{{/unless}}
+          {{/foreach}}
+        </div>
+        {{/if}}
+        <h1 class="h1" style="margin-top:.6rem">{{title}}</h1>
+        {{#if custom_excerpt}}
+          <p class="ph-sub">{{custom_excerpt}}</p>
+        {{else}}
+          {{#if excerpt}}<p class="ph-sub">{{excerpt words="32"}}</p>{{/if}}
+        {{/if}}
+        <p class="ph-date">{{date}}</p>
+      </div>
+      <div class="ph-right">
+        <div class="post-media-frame nb-shadow-xl">
+          {{#if feature_image}}
+            <img class="post-media" src="{{img_url feature_image size="l"}}" alt="{{title}}"/>
+          {{else}}
+            <div style="aspect-ratio:16 / 10"></div>
+          {{/if}}
+        </div>
+      </div>
+    </header>
+    <section class="prose"><section class="gh-content gh-canvas"><section class="gh-content gh-canvas">{{content}}</section></section></section>
+  {{/post}}
+  {{#if comments}}
+<section class="nb-comments gh-canvas">
+  <h2 class="h3">comments {{comment_count empty=""}}</h2>
+  {{comments title="" count=false mode="auto" saturation=40}}
+</section>
+{{/if}}
+</article>
