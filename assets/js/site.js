@@ -251,3 +251,42 @@ function openPortalView(view){
     }
   }catch(e){}
 })();
+
+/* Code copy buttons */
+(function(){
+  function makeBtn(){ var b=document.createElement('button'); b.className='nb-copy-btn'; b.type='button'; b.textContent='copy'; return b; }
+  function attach(block){
+    if(block.dataset.nbCopy) return; block.dataset.nbCopy='1';
+    var btn=makeBtn(); block.appendChild(btn);
+    btn.addEventListener('click', function(){
+      var code = block.querySelector('code') || block;
+      var text = code.innerText || code.textContent || '';
+      function done(ok){
+        btn.textContent = ok ? 'copied' : 'failed';
+        btn.classList.toggle('nb-copied', !!ok);
+        setTimeout(function(){ btn.textContent='copy'; btn.classList.remove('nb-copied'); }, 1400);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      } else {
+        try{
+          var sel=window.getSelection(); var range=document.createRange();
+          range.selectNodeContents(code); sel.removeAllRanges(); sel.addRange(range);
+          document.execCommand('copy'); sel.removeAllRanges(); done(true);
+        }catch(e){ done(false); }
+      }
+    });
+  }
+  function scan(root){
+    (root || document).querySelectorAll('.gh-content pre, .kg-code-card pre').forEach(function(pre){ attach(pre.parentElement.classList.contains('kg-code-card') ? pre.parentElement : pre); });
+  }
+  if(document.readyState!=='loading') scan(document);
+  else document.addEventListener('DOMContentLoaded', function(){ scan(document); });
+
+  // Observe dynamically inserted content (e.g., portal/SPA transitions)
+  var mo = new MutationObserver(function(muts){
+    muts.forEach(function(m){ for(var i=0;i<m.addedNodes.length;i++){ var n=m.addedNodes[i]; if(n.nodeType===1) scan(n); } });
+  });
+  mo.observe(document.documentElement, {childList:true, subtree:true});
+})();
+
