@@ -4,3 +4,5 @@ a neo-brutalist, work-in-progress theme for Ghost, designed specifically for the
 ![screenshot](assets/images/screenshot-desktop.png)
 
 I can't be bothered to write an entire readme for this, so check out the full write-up here: https://blog.intelfy.dk/dev-block-made-theme/ (contains a download .zip, but you could also just clone this repository locally and zip and install)
+
+Download the latest release here: https://github.com/TomKonig/neo-brutalics/releases
