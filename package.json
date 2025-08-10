@@ -1,6 +1,6 @@
 {
   "name": "neo-brutalics",
-  "version": "0.7.1",
+  "version": "0.7.3",
   "description": "a neo-brutalist, work-in-progress theme for Ghost, designed specifically for the intelfy.dk blog but shared with you for free.",
   "engines": {
     "ghost": ">=6.0.0"

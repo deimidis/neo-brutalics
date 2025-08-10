@@ -10,6 +10,17 @@
   --gh-font-heading: Sora;
   --gh-font-body: Manrope;
 }
+
+@font-face {
+  font-family: "var(--gh-font-body)";
+  src: url("assets/fonts/manrope.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "var(--gh-font-heading)";
+  src: url("assets/fonts/sora.ttf") format("truetype");
+}
+
 .dark{
   --bg:#0e1114;
   --surface:#161a1d;
