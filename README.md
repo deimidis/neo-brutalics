@@ -3,7 +3,7 @@ by Thomas Konig @ intelfy
 thomas@intelfy.dk
 
 Latest update:
-August 10, 2025
+August 12, 2025
 
 a neo-brutalist, work-in-progress theme for Ghost, designed for the intelfy.dk blog but shared with you for free.
 
@@ -18,6 +18,20 @@ I can't be bothered to write an entire readme for this, so check out the full wr
 Download the latest semi-stable release here: https://github.com/TomKonig/neo-brutalics/releases
 
 Or find the newest dev version - hotfixes and all - here: https://blog.intelfy.dk/dev-block-made-theme/
+
+## Changelog 0.9.0 | August 12, 2025
+This one required significant patience. I decided to do a lot of critical housekeeping on the botched patchwork that came before it, since I have now decided to publish the theme for everyone to use. If you have visited my site these past couple days, you will have seen a lot of weird iterations of increasingly broken things until it suddenly worked. 
+
+- **Stylesheet rebuilt almost from scratch** - CSS is now (somewhat) human readable, and a lot of classes have been standardized.
+- **Ghost card_assets disabled** - I was in a constant battle with them over permission to style certain cards. It was easier this way. Every card has now been rebuilt specifically to suit the theme.
+- **Fonts now up to code** - font loading is now being handled in a more efficient manner, manageable by all modern browsers. Fallbacks are implemented. 
+- **Cards massively improved** - No more overflow off the DOM or bad padding on smaller devices. Cards now share standardized classes for width and box-shadows. (Video card remains broken.)
+- **Consistent hero padding** - The post hero is now no longer much wider than the content.
+- **Consistent hero wrapping on mobile** - Finally.
+- **Theme toggle now overrides OS default** - You can now view light mode even if your device is in dark mode, the design does not break.
+- **Navigation works properly** - Dropout menus now show up where and as they are expected to. 
+- **Earliest admin panel options being introduced** (delayed until v1.0) - this began as a way to overrule custom fonts until disabled by the user, but has been expanded to allow for a bit more customization, like hero image positioning, custom lottie animations without code edits, card border radius control, related posts, and more.
+- **QoL improvements** - many smaller changes here and there mostly relevant for those who feel like digging into the code. 
 
 ## v0.8.0 changelog:
 - **Fonts now load correctly** - Massively changed the structure to allow fonts to load correctly. Does not support custom themes until I set up an admin panel option.

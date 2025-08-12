@@ -1,12 +1,23 @@
 
-<nav class="nav-bar">
+<nav class="nav-bar" role="navigation" aria-label="Primary navigation">
   <div class="wrap nav-row">
-    <a href="{{@site.url}}" class="brand pill nb-shadow"><span class="brand-text">{{@site.title}}</span></a>
+    <a href="{{@site.url}}" class="brand pill nb-shadow">
+      <span class="brand-text">{{@site.title}}</span>
+    </a>
     <div class="nav-right">
       {{#if @site.navigation}}
         {{navigation}}
       {{/if}}
-      <button id="navToggle" class="nav-toggle pill nb-shadow" aria-expanded="false" aria-label="Open menu"><span class="bars"><span></span><span></span><span></span></span></button>
+      <button id="navToggle" class="nav-toggle pill nb-shadow" 
+              aria-expanded="false" 
+              aria-controls="mobileMenu"
+              aria-label="Open menu">
+        <span class="bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
     </div>
   </div>
 
@@ -15,15 +26,25 @@
     <div class="wrap">
       <div class="tags-panel-inner nb-shadow-xl">
         <div class="tags-grid">
-  {{navigation type="secondary"}}
-</div>
+          {{navigation type="secondary"}}
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Mobile menu shows the same nav links -->
   <div id="mobileMenu" class="mobile-menu">
-    {{#if @site.navigation}}{{navigation}}{{/if}}</div>
+    {{#if @site.navigation}}
+      {{navigation}}
+    {{else}}
+      <!-- Fallback navigation if no main navigation -->
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#auth">Sign In</a>
+        </li>
+      </ul>
+    {{/if}}
+  </div>
 </nav>
 
 <!-- Hidden signout trigger -->

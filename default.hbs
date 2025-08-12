@@ -3,11 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="theme-color" content="#f5f3eb" />
+  <meta name="color-scheme" content="light dark" />
+  
   <title>{{meta_title}}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link rel="canonical" href="{{canonical_url}}" />
+  
+  {{#if @site.icon}}
+  <link rel="icon" type="image/png" href="{{img_url @site.icon size="32x32"}}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{img_url @site.icon size="16x16"}}" sizes="16x16" />
+  {{/if}}
+  
+  <!-- Local fonts -->
+  {{> fonts}}
+  
   <!-- Theme CSS (compiled) -->
   <link rel="stylesheet" href="{{asset "css/screen.css"}}"/>
   {{ghost_head}}

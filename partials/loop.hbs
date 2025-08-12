@@ -3,7 +3,7 @@
     {{#foreach posts}}
       <article class="card nb-shadow">
         {{#if feature_image}}
-          <img class="card-image nb-shadow-xs" src="{{img_url feature_image size="m"}}" alt="{{title}}"/>
+          <img class="card-image nb-shadow-xs" src="{{img_url feature_image size="m"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}Featured image for {{title}}{{/if}}"/>
         {{/if}}
         <h3 class="card-title"><a href="{{url}}">{{title}}</a></h3>
         <p class="card-meta">{{date}}</p>

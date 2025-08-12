@@ -1,0 +1,41 @@
+{{!< default}}
+<section class="wrap pad-top">
+  <header class="error-head">
+    <h1 class="h1">{{statusCode}}</h1>
+    <p class="error-message">{{message}}</p>
+    {{#if statusCode}}
+      {{#match statusCode "404"}}
+        <p class="muted">The page you're looking for couldn't be found.</p>
+      {{else}}
+        <p class="muted">Something went wrong. Please try again later.</p>
+      {{/match}}
+    {{/if}}
+  </header>
+  
+  <div class="error-actions">
+    <a href="{{@site.url}}" class="btn btn-primary btn-pill nb-shadow">← Back to home</a>
+  </div>
+</section>
+
+<style>
+.error-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.error-head .h1 {
+  font-size: clamp(3rem, 10vw, 8rem);
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.error-actions {
+  text-align: center;
+  margin-top: 3rem;
+}
+</style>
