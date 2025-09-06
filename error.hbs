@@ -5,15 +5,15 @@
     <p class="error-message">{{message}}</p>
     {{#if statusCode}}
       {{#match statusCode "404"}}
-        <p class="muted">The page you're looking for couldn't be found.</p>
+        <p class="muted">{{t "The page you're looking for couldn't be found."}}</p>
       {{else}}
-        <p class="muted">Something went wrong. Please try again later.</p>
+        <p class="muted">{{t "Something went wrong. Please try again later."}}</p>
       {{/match}}
     {{/if}}
   </header>
   
   <div class="error-actions">
-    <a href="{{@site.url}}" class="btn btn-primary btn-pill nb-shadow">← Back to home</a>
+    <a href="{{@site.url}}" class="btn btn-primary btn-pill nb-shadow">{{t "← Back to home"}}</a>
   </div>
 </section>
 

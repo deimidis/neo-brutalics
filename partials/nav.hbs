@@ -11,7 +11,7 @@
       <button id="navToggle" class="nav-toggle pill nb-shadow" 
               aria-expanded="false" 
               aria-controls="mobileMenu"
-              aria-label="Open menu">
+              aria-label="{{t "Open menu"}}">
         <span class="bars">
           <span></span>
           <span></span>
@@ -40,7 +40,7 @@
       <!-- Fallback navigation if no main navigation -->
       <ul class="nav">
         <li class="nav-item">
-          <a href="#auth">Sign In</a>
+          <a href="#auth">{{t "Sign In"}}</a>
         </li>
       </ul>
     {{/if}}
@@ -54,13 +54,13 @@
 <div id="authModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
   <div class="modal-card nb-shadow-xl">
     <div class="modal-head">
-      <h3 id="authTitle" class="h2">Join or sign in</h3>
-      <button class="modal-close pill nb-shadow" data-close="authModal" aria-label="Close">Close</button>
+      <h3 id="authTitle" class="h2">{{t "Join or sign in"}}</h3>
+      <button class="modal-close pill nb-shadow" data-close="authModal" aria-label="{{t "Close"}}">{{t "Close"}}</button>
     </div>
-    <p class="muted" style="margin:.25rem 0 1rem">the ghost portal will take over now.</p>
+    <p class="muted" style="margin:.25rem 0 1rem">{{t "the ghost portal will take over now."}}</p>
     <div class="modal-actions">
-      <button class="btn btn-primary btn-pill nb-shadow" data-portal="signup">sign up</button>
-      <button class="btn btn-pill nb-shadow" data-portal="signin">sign in</button>
+      <button class="btn btn-primary btn-pill nb-shadow" data-portal="signup">{{t "sign up"}}</button>
+      <button class="btn btn-pill nb-shadow" data-portal="signin">{{t "sign in"}}</button>
     </div>
   </div>
 </div>

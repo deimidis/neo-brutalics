@@ -29,10 +29,10 @@
   
   <footer class="page-footer">
     {{#if updated_at}}
-      <p class="page-updated">Last updated on {{date updated_at format="MMMM DD, YYYY"}}</p>
+      <p class="page-updated">{{t "Last updated on"}} {{date updated_at format="MMMM DD, YYYY"}}</p>
     {{/if}}
     {{#if published_at}}
-      <p class="page-published">Published on {{date published_at format="MMMM DD, YYYY"}}</p>
+      <p class="page-published">{{t "Published on"}} {{date published_at format="MMMM DD, YYYY"}}</p>
     {{/if}}
   </footer>
 </article>

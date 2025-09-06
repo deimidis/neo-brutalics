@@ -2,7 +2,7 @@
   {{#if posts}}
   <section class="featured">
     <div class="wrap">
-      <div class="section-head right"><h2 class="h2">featured</h2></div>
+      <div class="section-head right"><h2 class="h2">{{t "featured"}}</h2></div>
       {{#foreach posts}}
       <article class="featured-hero">
         <div class="ph-left">
@@ -17,7 +17,7 @@
         <a class="ph-right" href="{{url}}">
           <div class="post-media-frame nb-shadow-xl">
             {{#if feature_image}}
-              <img class="post-media" src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}Featured image for {{title}}{{/if}}"/>
+              <img class="post-media" src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{t "Featured image for {title}" title=title}}{{/if}}"/>
             {{else}}
               <div style="aspect-ratio:16/10"></div>
             {{/if}}
